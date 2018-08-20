@@ -10,6 +10,8 @@ CRUD API was documented with [SwaggerHub] and then imported to Amazon's API Gate
 
 [NPM jsonschema] package used to validate user model. It was assumed that all fields are required.
 
+[NPM aws-sdk-mock] package used to mock AWS DocumentClient.
+
 100% Lambda coverage achieved with [Jest] testing framework. Jest was chosen because it is an all in one solution: including test runner, assertions, and coverage reports.
 
  ----
@@ -44,3 +46,4 @@ export AWS_DEFAULT_REGION=
 [npm jsonschema]: https://www.npmjs.com/package/jsonschema
 [Serverless]: https://aws.amazon.com/serverless/
 [Jest]: https://jestjs.io/en/
+[NPM aws-sdk-mock]: https://www.npmjs.com/package/aws-sdk-mock
