@@ -1,0 +1,15 @@
+{
+  "name": "lambda.update-user",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build-lambda": "scripts/build-lambda.sh",
+    "upload-lambda": "scripts/upload-function.sh"
+  },
+  "author": "Justin J",
+  "license": "ISC",
+  "dependencies": {
+    "jsonschema": "^1.2.4"
+  }
+}

@@ -1,0 +1,36 @@
+{
+  "name": "orange-theory",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest",
+    "view-coverage": "open -a 'Google Chrome' ./coverage/lcov-report/index.html"
+
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.18.0",
+    "jsonschema": "^1.2.4"
+  },
+  "devDependencies": {
+    "aws-sdk-mock": "^4.1.0",
+    "jest": "^23.5.0",
+    "jest-html-reporter": "^2.4.2"
+  },
+  "jest": {
+    "collectCoverageFrom": [
+      "<rootDir>/lambda/**/index.js"
+    ],
+    "testMatch": [
+      "<rootDir>/lambda/**/*spec.js"
+    ],
+    "testEnvironment": "node",
+    "verbose": true,
+    "testResultsProcessor": "./node_modules/jest-html-reporter",
+    "globals": {
+      "TEST_ENV": true
+    }
+  }
+}

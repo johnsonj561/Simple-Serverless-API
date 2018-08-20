@@ -1,0 +1,221 @@
+swagger: '2.0'
+info:
+  description: |
+    Simple random user API
+  version: 1.0.0
+  title: Simple Random User API
+  contact:
+    email: johnsonj561@gmail.com
+tags:
+- name: user
+  description: Operations for user information
+
+paths:
+  /user:
+    post:
+      tags:
+      - user
+      summary: Create user
+      description: Creates new user with provided user object
+      operationId: createUser
+      produces:
+      - application/json
+      parameters:
+      - in: body
+        name: body
+        description: Object containing all user information
+        required: true
+        schema:
+          $ref: '#/definitions/User'
+      responses:
+        200:
+          description: successful operation
+        400:
+          description: invalid payload
+        409:
+          description: user already exists
+    put:
+      tags:
+      - user
+      summary: Update user
+      description: Replaces user with the new user information
+      operationId: updateUser
+      produces:
+      - application/json
+      parameters:
+      - in: body
+        name: body
+        description: Object to replace existing user with
+        required: true
+        schema:
+          $ref: '#/definitions/User'
+      responses:
+        200:
+          description: successful operation
+        404:
+          description: user not found
+    get:
+      tags:
+      - user
+      summary: Get all users
+      description: Get all available users
+      operationId: getAllUsers
+      produces:
+      - application/json
+      responses:
+        200:
+          description: successful operation
+          schema:
+            items:
+              $ref: '#/definitions/User'
+
+  /user/{email}:
+    get:
+      tags:
+      - user
+      summary: Get user by email
+      description: Get all user info for user with email
+      operationId: getUserByEmail
+      produces:
+      - application/json
+      parameters:
+      - name: email
+        in: path
+        description: Email of user to lookup
+        required: true
+        type: string
+      responses:
+        200:
+          description: successful operation
+          schema:
+            $ref: '#/definitions/User'
+        400:
+          description: Invalid email provided
+        404:
+          description: User not found
+    delete:
+      tags:
+      - user
+      summary: Delete user
+      description: Delete user with provided email
+      operationId: deleteUser
+      produces:
+      - application/json
+      parameters:
+      - name: email
+        in: path
+        description: The email of user to be deleted
+        required: true
+        type: string
+      responses:
+        200:
+          description: successful operation
+        400:
+          description: Invalid email provided
+        404:
+          description: User not found
+definitions:
+  User:
+    type: object
+    properties:
+      gender:
+        type: string
+      name:
+        type: object
+        properties:
+          title:
+            type: string
+          first:
+            type: string
+          last:
+            type: string
+      location:
+        type: object
+        properties:
+          street:
+            type: string
+          city:
+            type: string
+          state:
+            type: string
+          postcode:
+            type: string
+          coordinates:
+            type: object
+            properties:
+              latitude:
+                type: string
+              longitude:
+                type: string
+          timezone:
+            type: object
+            properties:
+              offset:
+                type: string
+              description:
+                type: string
+      email:
+        type: string
+      login:
+        type: object
+        properties:
+          uuid:
+            type: string
+          username:
+            type: string
+          password:
+            type: string
+          salt:
+            type: string
+          md5:
+            type: string
+          sha1:
+            type: string
+          sha256:
+            type: string
+      dob:
+        type: object
+        properties:
+          date:
+            type: string
+          age:
+            type: number
+      registered:
+        type: object
+        properties:
+          date:
+            type: string
+          age:
+            type: number
+      phone:
+        type: string
+      cell:
+        type: string
+      id:
+        type: object
+        properties:
+          name:
+            type: string
+          value:
+            type: string
+      picture:
+        type: object
+        properties:
+          large:
+            type: string
+          medium:
+            type: string
+          thumbnail:
+            type: string
+      nat:
+        type: string
+
+
+# Added by API Auto Mocking Plugin
+host: virtserver.swaggerhub.com
+# basePath: /ThisOrgName/test-api1.0.0
+# Added by API Auto Mocking Plugin
+schemes:
+ - https
+# Added by API Auto Mocking Plugin
+basePath: /ThisOrgName/test-api/1.0.0

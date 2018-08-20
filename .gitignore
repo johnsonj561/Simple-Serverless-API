@@ -1,0 +1,4 @@
+**/node_modules
+aws-config.sh
+coverage
+*.zip
