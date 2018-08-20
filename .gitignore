@@ -1,4 +1,5 @@
 **/node_modules
 aws-config.sh
 coverage
+test-report.html
 *.zip
