@@ -1,12 +1,11 @@
 {
-  "name": "orange-theory",
+  "name": "simple-serverless-api",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
     "test": "jest",
     "view-coverage": "open -a 'Google Chrome' ./coverage/lcov-report/index.html"
-
   },
   "author": "",
   "license": "ISC",
