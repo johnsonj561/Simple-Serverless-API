@@ -1,5 +1,7 @@
 ### Simple User API with API Gateway, Lambda, Jest, and Swagger
 
+Keywords: serverless, AWS, unit testing, mocks, swagger, jsonschema, ES6, async/await
+
 CRUD API was documented with [SwaggerHub] and then imported to Amazon's API Gateway, allowing quick scaffolding of API from Swagger definition.
 
 [Click to view the API's Swagger Definition].
