@@ -20,7 +20,7 @@ To view test coverage:
    ```
 3. run unit tests to build coverage report
    ```
-   npm run test
+   npm run test -- --coverage
    ```
 4. view coverage report in browser (requires chrome)
    ```
