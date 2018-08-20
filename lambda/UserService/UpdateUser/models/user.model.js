@@ -6,9 +6,8 @@ const emailRegex = /(?:[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}
 const urlRegex = /https?:\/\/(www\.)?[-a-zA-Z0-9@:%._\+~#=]{2,256}\.[a-z]{2,6}\b([-a-zA-Z0-9@:%_\+.~#?&//=]*)/;
 const longLatRegex = /^-?\d{1,3}(.\d*)?$/m;
 const timeOffsetRegex = /^-?\d{1,2}:\d{2}$/m;
-// the random user api has 8 digit phone numbers
-// we are using a very simple validation of 1 or more digits, requirement unknown
-const phoneRegex = /^\d+$/m;
+// disabling phone regex, random user api was inconsistent in format
+// const phoneRegex = /^\d+$/m;
 
 
 // User Schema
@@ -59,7 +58,7 @@ const userSchema = {
           minLength: 1
         },
         postcode: {
-          type: 'string',
+          type: ['string', 'number'],
           required: true,
         },
         coordinates: {
@@ -164,12 +163,12 @@ const userSchema = {
     phone: {
       type: 'string',
       required: true,
-      pattern: phoneRegex
+      // pattern: phoneRegex
     },
     cell: {
       type: 'string',
       required: true,
-      pattern: phoneRegex
+      // pattern: phoneRegex
     },
     id: {
       type: 'object',
